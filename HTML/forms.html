@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="fname"> fist Name: <input type="text" placeholder="enter your first name"><br><br></label>
+        <label for="lname">last name: <input type="text" placeholder="enter your last name"><br><br></label>
+        <label for="pass">password:<input type="password" placeholder="enter your password"><br><br> </label>
+        <label>Email<input type="email"></label><br>
+        <label>color<input type="color"></label><br>
+        <label>calender<input type="month"></label><br>
+        <label>date<input type="date"></label><br>
+        <label>datetime-local<input type="datetime-local"></label><br>
+        <label>hidden:<input type="hidden"></label><br>
+        <label>File<input type="File"></label><br>
+        <label>image<input type="image"></label><br>
+        <label>URL<input type="url"></label><br>
+        <label>time<input type="time"></label><br>
+        <label>submit<input type="submit" value="Submit"></label>
+            <section >
+            <h1>select your Geander</h1>
+            male;<input type="radio" name="gender" value="male">
+            female:<input type="radio" name="gender" value="female">
+            others:<input type="radio" name="gender" value="others">
+        </section>
+          <br>
+        <label for="cource">Select Cource:</label>
+        <select id="cource" name="cource">
+          <option value="Html">Html</option>
+          <option value="CSS">CSS</option>
+          <option value="Javascript">Javascript</option>
+          <option value="Reactjs">Reactjs</option>
+        </select>
+        <br>
+        <textarea name="message" rows="10" cols="30">add sum Text</textarea>
+          <br>
+
+          <button type="button" onclick="alert('Hello World!')">Click Me!</button>
+
+          <!-- The <fieldset> element is used to group related data in a form.
+
+         The <legend> element defines a caption for the <fieldset> element. -->
+            <form action="/action_page.php">
+                <fieldset>
+                  <legend>Personalia:</legend>
+                  <label for="fname">First name:</label><br>
+                  <input type="text" id="fname" name="fname" value="John"><br>
+                  <label for="lname">Last name:</label><br>
+                  <input type="text" id="lname" name="lname" value="Doe"><br><br>
+                  <input type="submit" value="Submit">
+                </fieldset>
+              </form>
+               <br>
+              <form action="/action_page.php">
+                <input list="browsers">
+                <datalist id="browsers">
+                  <option value="Edge">
+                  <option value="Firefox">
+                  <option value="Chrome">
+                  <option value="Opera">
+                  <option value="Safari">
+                </datalist>
+              </form>
+    </form>
+    <br><br>
+    <button>Click me </button>
+</body>
+</html>

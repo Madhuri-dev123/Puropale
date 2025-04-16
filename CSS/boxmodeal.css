@@ -1,0 +1,17 @@
+
+     div{
+            background-color: orange;
+            width: 300px;
+            border: 1px solid green;
+            padding: 100px;
+            margin: 1px;
+            text-align: center;
+            text-shadow: yellow;
+        }
+         .box1{
+            margin: 100px 20px 30px 40px;
+         }
+        *{
+            background-color:white;
+        }
+ 

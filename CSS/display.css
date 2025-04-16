@@ -1,0 +1,32 @@
+.container{
+     display: inline;
+     background-color: pink;
+     border:1px solid;
+     padding: 100px 100px ;
+     margin: 10px ;
+
+}
+
+.container1{
+    display: block;
+    
+    background-color: aqua;
+}
+
+.container2{
+    display: inline-block;
+    width: 100px;
+    height: 50px;
+    background-color: aqua;
+}
+
+.container3{
+    display: none;
+    background-color: aqua;
+}
+.container4{
+    visibility: hidden;
+    background-color: aqua;
+    border: 1px solid;
+
+}
