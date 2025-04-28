@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+          <style>
+
+             body{
+              display: flex;
+              justify-content: space-between;
+            }
+              .main{
+              border: 2px solid black;
+              display: grid;
+              grid-template-columns: repeat(4,70px);
+              gap: 5px;
+              background-color: white;
+              padding: 10px;
+              align-items: center;
+              margin-left: auto;
+              margin-right: auto;
+              margin-top: 50px;
+
+              }
+                 #userdata{
+                   grid-column: span 3;
+                   height: 40px;
+                   font-size: 30px;
+                   padding: 10px;
+                   
+              }
+
+              button{
+                    width: 70px;
+                    height: 70px;
+                    font-size: 20px;
+                    background-color: green;
+                    color: white;
+                    border: none;
+                    border-radius: 20px;
+                    gap: 30px;
+                    
+                    
+              }
+
+            /* .b{
+              background-color: green;
+              color: white;
+              padding: 40px 80px;
+              text-align: center;
+              border-radius: 30px;
+              font-size: 30px;
+            }
+            .t{
+              font-size: 35px;
+              align-items: center;
+              padding: 35px 65px;
+            }
+            tr{
+              align-items: center;
+            } */
+          </style>
+              <script>
+                   function Clear(){
+                      userdata.value="";
+                   }
+                   function givenumber(input){
+                      userdata.value+=input;
+                   }
+
+                   function cal (){
+                      var output=eval(document.getElementById("userdata").value);
+                      userdata.value=output;
+                  }
+
+              </script>
+         </head>
+               <body>
+              <div class="main" >
+            <input type="text" id="userdata" >
+            <button onclick="Clear()">Clear</button>
+           <button onclick="givenumber('1')"  >1</button>
+            <button onclick="givenumber('2')" >2</button>
+            <button onclick="givenumber('3')" >3</button>
+            <button onclick="givenumber('0')" >0</button>
+            <button onclick="givenumber('4')" >4</button>
+            <button onclick="givenumber('5')"  >5</button>
+            <button onclick="givenumber('6')" >6</button>
+            <button onclick="givenumber('.')" >.</button>
+          
+
+          
+            <button onclick="givenumber('7')" >7</button>
+            <button onclick="givenumber('8')">8</button>
+            <button onclick="givenumber('9')" >9</button>
+            <button onclick="givenumber('*')" >*</button>
+          
+
+          
+            <button onclick="givenumber('/')">/</button>
+            <button onclick="givenumber('-')"  >-</button>
+            <button onclick="givenumber('+')" >+</button>
+          <button onclick="cal('=')" class="b" >=</button>
+          
+
+        </div>
+  </body>
+</html>

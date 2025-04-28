@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <style>
+        .all{
+            width: fit-content;
+            border: 2px solid green;
+            margin: 40px;
+            padding: 50px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+      <script>  
+     function sub () {
+        let fistNum = document.getElementById("fistnum").value
+        let secoundNum  = document.getElementById("secondnum").value
+
+         let result ;
+          result = fistNum - secoundNum
+          console.log(result)
+          document.getElementById("Result").innerHTML="Output" +result;
+     }
+
+     function add () {
+        let fistNum1 = Number(document.getElementById("fistnum1").value);
+        let secoundNum2  = Number(document.getElementById("secondnum2").value);
+
+         let result1 ;
+          result1 = fistNum1 + secoundNum2;
+          console.log(result1)
+          document.getElementById("Result1").innerHTML="Output" +result1;
+     }
+
+       
+
+     
+      </script>
+   </head>
+   <body>
+
+    <div class="all">
+        <h1 style="margin-top: 5px; text-align: center;">Subraction</h1>
+    Fist Number:<input id =fistnum type="number" placeholder="eneter fist number" ><br><br>
+    Secound Number:<input id ="secondnum" type="number" placeholder="eneter fist number"><br><br>
+    <button onclick="sub()" >Click Me</button>
+
+    <p id="Result"> this is Result</p>
+   </div>
+
+   <div class="all">
+    <h1 style="margin-top: 5px; text-align: center;">Addition</h1>
+   Fist Number:<input id =fistnum1 type="number" placeholder="eneter fist number" ><br><br>
+   Secound Number:<input id ="secondnum2" type="number" placeholder="eneter fist number"><br><br>
+   <button onclick="add()" >Click Me</button>
+
+    <p id="Result1"> this is Result</p>
+    
+  </div>
+
+
+   
+</body>
+</html>

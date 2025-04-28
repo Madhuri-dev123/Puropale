@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+           //document.write("Welcome to Javascript");
+           //window.alert("javascript");
+
+           
+           console.log("js is Dynamically typed language");
+           document.getElementById("d1");
+           document.getElementsByClassName("h1tag");
+           document.getElementsByTagName("h2")
+          
+           var number=22;
+           var name = "madhuri";
+           console.log(number);
+           console.log(name);
+
+           var a = 10;
+           var b = 20;
+           console.log(a+b);
+
+           function abc(){
+                name1 = "Gunnapaneni"
+                
+                console.log(name1)
+           }
+           abc()
+
+         
+           function changetext(){
+                document.getElementById("d3").innerHTML="Hello Javascript"
+           }
+
+          let p1,p2,p3 ;
+            p1 = 100; p2 = 200; p3 = p1+p2;
+
+           document.getElementById("add").innerHTML= p3;
+        
+
+        // 4. variables 
+       // 1. automatically 2. var 
+
+           
+        
+    </script>
+</head>
+<body>
+          
+      <p id="d1">javascript is client side scripting language</p>
+      <h1 class="h1tag">this h1 Tag</h1>
+      <h2>This is H2 Tag</h2>
+
+       <h1> My fist </h1>
+      <button type="button" onclick="document.getElementById('d2').innerHTML=Date()" >Click Me</button>
+      <p id="d2"></p>
+       <br><br>
+      <h1>What can Javascript Do!</h1>
+      <h1 id="d3">javascript change Html Content</h1>
+    <button onclick="changetext()">change text</button>
+
+      <br>
+    <!-- example 3 -->
+       <h1>adding of two number</h1>
+    <button onclick="document.write(2+3)">add</button>
+    <br><br>
+    <button onclick="document.alert(2+3)">sub</button>
+
+    <br><br>
+    <button onclick="window.print()">Print this page</button>
+
+    
+    <p>Multiple statements on one line are allowed.</p>
+    <p id="add"></p>
+
+
+ 
+</body>
+</html>

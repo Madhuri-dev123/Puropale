@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Two-Column Website</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container {
+      display: flex;
+      padding: 20px;
+    }
+
+    .left-column {
+      flex: 1;
+      background-color: #f4f4f4;
+      padding: 15px;
+    }
+
+    .right-column {
+      flex: 3;
+      background-color: #e2f7e1;
+      padding: 15px;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+
+    /* Responsive for mobile */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Welcome to My Website</h1>
+  </header>
+
+  <div class="container">
+    <div class="left-column">
+      <h2>Menu</h2>
+      <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>Projects</li>
+        <li>Contact</li>
+      </ul>
+    </div>
+    <div class="right-column">
+      <h2>Main Content</h2>
+      <p>This is a simple two-column layout for a website using Flexbox. You can place your content here like text, images, videos, or forms.</p>
+    </div>
+  </div>
+
+  <footer>
+    footer
+  </footer>
+
+</body>
+</html>
