@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <script>
+
+            let listitems = ["bags","shoes","cap"];
+            let colors  = ["red","pink","yellow"]
+            //console.log(listitems)
+            //console.log(listitems[1])
+            listitems [3] = "pen"
+            console.log(listitems.length)
+             console.log(listitems.concat(colors))
+             console.log(listitems.pop());
+             console.log(listitems.push("watch"))
+             console.log(listitems.reverse())
+             console.log(listitems.shift());
+
+             // unshift; to add an elements to begining  of an array. to 
+
+             console.log(listitems.unshift("glass","palte"));
+             
+             // slice ; to cut the items from stating index to ending and to give the index and length
+
+             let items = ["cloths","wood","plastic","iron"];
+            let sliceitems =  items.slice(0,3)
+            console.log(sliceitems)
+
+             // sort ; arraging the oreder way 
+
+            let fruits = ['banana',"capsicum","apple","egg"]
+              let order = fruits.sort();
+              console.log(order)
+
+            // join ; to join the every behind the element only give value's
+
+             let joiningele = ["madhuri", "gunnapaneni","23"]
+             console.log(joiningele.join(""+"feamle"+""))
+
+
+
+            //1.toString
+            let name = ["Danny", "Joe", "Sarah", "Molly"];
+            let stringname = name.toString();
+            console.log(stringname)
+            //console.log(name)
+ 
+           //2.join()
+            let namej = ["Danny", "Joe", "Sarah", "Molly" ];
+            let stringnamej = namej.join(" and ")
+            console.log(stringnamej)
+
+            //3.concat()
+
+            let name1 = ["tom","jerry"];
+            let name2 = ["ram","sitha","lakshmana"];
+            let name3 = ["abc","def"];
+
+            let allnum = name1.concat(name2,name3);
+            console.log(allnum)
+
+            //4.slice()
+            let s1 = ["madhu","sai","gowri"]
+            //  let s2 = s1.splice(1,1)
+            let s2 = s1.splice(1,2 )
+             console.log(s2)
+            
+        //5. index
+          let indx = ["hii","hello","hey"];
+              let index = indx.indexOf("hello");
+              console.log(index)
+
+        // 6. flat()
+        let number =[1,3,4,[22,5[7,8]],66];
+        let flat = number.flat(2)
+
+        console.log(flat)
+        // 7. forEach()
+
+        // let names  = ["madhuri","priya","swathi","bhavana"];
+        // names.forEach ( (n) =>{
+        //           console.log(n)
+        // })
+
+        let names  = ["madhuri","priya","swathi","bhavana"];
+
+        let count = 0 ;
+        names.forEach ( (n) =>{
+                  console.log(n)
+        })
+        console.log(count)
+
+        //if 
+
+        for( let i=2;i < names.length; i = i + 1){
+            console.log(names[i])
+        }
+        // map 
+         let nums = [1,2,3,4,5,6,7,8,9]
+         let double = nums.map((m)=> m*2);
+         console.log(double)
+        // filter
+            let posts = [
+                 {title:"post1",author:"Dan"},
+                 {title:"post2",author:"Dan"},
+                 {title:"post3",author:"Sarif"},
+         ]
+           let dansposts = posts.filter((p)=> p.author ==="Sarif");
+           console.log(dansposts)
+
+           // reduce 
+           
+           // some
+              let Grater = [1,2,3,4,5,6];
+              let GraterThans = Grater.some((n)=> n > 3);
+              console.log(GraterThans);
+
+          // every
+          let isGrater = [1,2,3,4,5,6];
+              let isGraterThans = isGrater.every((n)=> n > 1);
+              console.log(isGraterThans);
+
+          
+          // let stocks = [
+          //              {stock:"chocklet",quality:22},
+          //              {stock:"wapers", quality:20},
+          //              {stock:"jums", quality:19}
+          // ];
+          //  let nayo = stocks.find((s)=> s.stock === "nayo");
+          //  console.log(nayo.quality)
+
+
+          
+          
+
+      </script>
+      </head>
+      </html>
