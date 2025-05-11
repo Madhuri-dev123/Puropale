@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+         <button onclick="pqr()">On click</button><br><br>
+    
+        <select onchange="abc()" id="change">
+            <option value="grapes">Select a fruit</option>
+            <option value="apple">Apple</option>
+            <option value="banana">Banana</option>
+            <option value="mango">Mango</option>
+          </select>
+          <p id="demo"></p>
+
+          <p onmouseover="xyz()">onmouse events in javascript</p>
+
+          <h1 onmouseout="mouseout()">onmouseout in evevts </h1>
+
+          <input type="text" onkeydown="keydown()" id="down">onkey down event methods</h2>
+          <p id="m"></p>
+
+          <h1 onload="loading()">onload event</h1>
+</body>
+
+
+    <script>
+            function pqr(){
+                alert("onclick")
+            }
+            pqr()
+
+            function abc(){
+             var b=document.getElementById("change").value;
+             document.getElementById('demo').innerHTML="The selected fruit name is:"+b;
+            }
+
+            function xyz(){
+                console.log("this is onmouseover")
+            }
+            xyz()
+
+            function mouseout(){
+                console.log("madhuri")
+            }
+            mouseout()
+            function keydown (){
+                var s = document.getElementById("down").value;
+                document.getElementById("m").innerHTML="given output:"+s
+                
+            };
+            
+            function loading(){
+                alert("onloadingevent")
+            }
+            loading();
+
+            // defalut functions
+            setInterval (()=>{
+              console.log("this is default function")
+            },2000)
+                setTimeout (() =>{
+                console.log("this is set time out")
+             },3000)
+                  // == and ===
+            let x = "madhuri" ;
+            let y = "madhuri1";
+            console.log(x==y);
+            
+            let x1 = "123";
+            let x2 =  123 ;
+            console.log(x1==x2);
+            console.log(x1===x2);
+
+            // function with argu , paremeters
+
+             function add(p,q){
+               console.log(p+q)
+             }
+             add(10,20);
+             
+             
+        </script>
+</html>

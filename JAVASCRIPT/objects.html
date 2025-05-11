@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <h1 id="d1"></h1>
+</head>
+<body>
+    <script>
+        const person = [{
+                  fistname : "madhuri",
+                  lastname : "Gunnpapeni",
+                  age : 24,
+                  eyecolor : "black",
+               },  
+                 {
+                    fistname :"vandhana",
+                    lastname : "undavali",
+                    age      :  26,
+                    eyecolor : "black",
+                },
+                 {
+                    fistname:"bindhu",
+                    lastname:"konduri",
+                    age : 24,
+                    eyecolor : "brown",
+                 },
+                     ]
+                 console.log(person);
+                console.log(person[1].age );
+                console.log(Object.keys(person));
+                console.log(Object.values (person));
+                console.log(Object.entries(person)) // it return  an array of kry, value pairs
+
+
+
+            // string methods
+    
+            let str = "madhuri";
+            console.log(str.toUpperCase()); 
+
+            let str1 = "SITHA" ;
+            console.log(str1.toLowerCase());
+
+            let num  = ["ramu","sitha","lakshman"];
+            console.log(num.toString());
+            console.log(num[2].charAt(2));
+
+            let num1 = ["apple","banana","orange","grapes"];
+            let num2 = ["red","yellow","paleyellow","black"];
+            let total = num1.concat(num2);
+            console.log(total)
+
+            // slice (start,end) to extracts part of a string and returns new string
+             let cut = "javascriptjsaas";
+             console.log(cut.slice(10,15));
+            //  // substring
+            //  let cut1 = [1,2,3,4]
+            // console.log(cut1.substring(0,4));
+            // // substr ( start,length) 
+
+            // split( splita a string into an array based on a seperatr)
+             let seperator = "renu,anu,manu,thanu";
+             console.log(seperator.split(","));
+
+            let iteam = "software";
+             console.log(iteam.indexOf("w"));
+
+             //replace: (serach value , new value)
+
+            let text = "i like veg";
+            console.log(text.replace("veg","non-veg"));
+
+          // trim : (removes whitespace from both ends of a string)
+           let nam = "  hello thanu  ";
+           console.log(nam.trim());
+           console.log(nam.trimLeft());
+           console.log(nam.trimEnd());
+
+        
+
+
+        
+
+    
+
+
+
+
+
+       
+
+
+    </script>
+</body>
+</html>

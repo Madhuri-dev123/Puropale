@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WOOX Travel - Discover Amazing Places</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: #2a2a2a;
+            line-height: 1.7;
+        }
+        
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            color: #2a2a2a;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: rgba(22, 34, 57, 0.95);
+            height: 80px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5%;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo {
+            color: #fff;
+            font-size: 24px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: #22b3c1;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style-type: none;
+        }
+        
+        nav ul li {
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: #22b3c1;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background-image: url('/api/placeholder/1920/1000');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 5%;
+            position: relative;
+            color: #fff;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(22, 34, 57, 0.7);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+        }
+        
+        .hero-content h1 {
+            font-size: 60px;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+        
+        .hero-content p {
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #22b3c1;
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: #1a8a96;
+        }
+        
+        /* Search Form */
+        .search-form {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            margin-top: -100px;
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .search-form h4 {
+            font-size: 20px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        
+        .form-row {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin: 0 -10px;
+        }
+        
+        .form-col {
+            flex: 1;
+            padding: 0 10px;
+            min-width: 200px;
+        }
+        
+        .btn-search {
+            width: 100%;
+            background-color: #22b3c1;
+            color: #fff;
+            border: none;
+            padding: 12px;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-search:hover {
+            background-color: #1a8a96;
+        }
+        
+        /* Popular Destinations */
+        .section {
+            padding: 100px 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-header h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 2px;
+            background-color: #22b3c1;
+        }
+        
+        .destinations {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 0 5%;
+        }
+        
+        .destination-card {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            transition: all 0.3s ease;
+        }
+        
+        .destination-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .destination-img {
+            height: 250px;
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        .destination-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+        
+        .destination-card:hover .destination-img img {
+            transform: scale(1.1);
+        }
+        
+        .destination-info {
+            padding: 25px;
+        }
+        
+        .destination-info h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+        
+        .destination-info p {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        
+        .price {
+            font-size: 24px;
+            color: #22b3c1;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+        
+        .info-row span:first-child {
+            color: #666;
+        }
+        
+        .info-row span:last-child {
+            font-weight: 600;
+        }
+        
+        .btn-book {
+            display: block;
+            width: 100%;
+            background-color: #22b3c1;
+            color: #fff;
+            text-align: center;
+            padding: 12px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-book:hover {
+            background-color: #1a8a96;
+        }
+        
+        /* Call to Action */
+        .cta {
+            background-image: url('/api/placeholder/1920/600');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            padding: 100px 0;
+            color: #fff;
+            text-align: center;
+        }
+        
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(22, 34, 57, 0.8);
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta-content h2 {
+            font-size: 36px;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+        
+        .cta-content p {
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+        
+        /* About Us */
+        .about-section {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            padding: 0 5%;
+        }
+        
+        .about-img {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-img img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        
+        .about-content {
+            flex: 1;
+            padding: 0 50px;
+            min-width: 300px;
+        }
+        
+        .about-content h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .about-content p {
+            margin-bottom: 20px;
+            color: #666;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #162239;
+            color: #fff;
+            padding: 80px 0 30px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 0 5%;
+            margin-bottom: 50px;
+        }
+        
+        .footer-col {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-col h3 {
+            color: #fff;
+            font-size: 20px;
+            margin-bottom: 25px;
+            position: relative;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: #22b3c1;
+        }
+        
+        .footer-col p {
+            margin-bottom: 20px;
+            color: #bbb;
+        }
+        
+        .footer-links {
+            list-style-type: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links li a {
+            color: #bbb;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links li a:hover {
+            color: #22b3c1;
+            margin-left: 5px;
+        }
+        
+        .contact-info {
+            list-style-type: none;
+        }
+        
+        .contact-info li {
+            margin-bottom: 15px;
+            color: #bbb;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .contact-info li i {
+            margin-right: 10px;
+            color: #22b3c1;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bbb;
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 992px) {
+            .hero-content h1 {
+                font-size: 48px;
+            }
+            
+            .form-row {
+                flex-direction: column;
+            }
+            
+            .form-col {
+                margin-bottom: 15px;
+            }
+        }
+        
+        @media screen and (max-width: 768px) {
+            header {
+                padding: 0 20px;
+            }
+            
+            nav ul {
+                display: none; /* For mobile menu toggle */
+            }
+            
+            .hero-content h1 {
+                font-size: 36px;
+            }
+            
+            .about-content {
+                padding: 30px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <a href="#" class="logo">WOOX<span>TRAVEL</span></a>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Deals</a></li>
+                <li><a href="#">Reservation</a></li>
+                <li><a href="#">Book Yours</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Discover Amazing Places</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.</p>
+            <a href="#" class="btn">Explore Our Deals</a>
+        </div>
+    </section>
+
+    <!-- Search Form Section -->
+    <div class="search-form">
+        <h4>Search For Your Trip</h4>
+        <form id="searchForm">
+            <div class="form-row">
+                <div class="form-col">
+                    <div class="form-group">
+                        <label>Country:</label>
+                        <select class="form-control">
+                            <option value="">Select a country</option>
+                            <option value="Italy">Italy</option>
+                            <option value="Greece">Greece</option>
+                            <option value="Spain">Spain</option>
+                            <option value="France">France</option>
+                            <option value="Switzerland">Switzerland</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-col">
+                    <div class="form-group">
+                        <label>Check In Date:</label>
+                        <input type="date" class="form-control">
+                    </div>
+                </div>
+                <div class="form-col">
+                    <div class="form-group">
+                        <label>Check Out Date:</label>
+                        <input type="date" class="form-control">
+                    </div>
+                </div>
+                <div class="form-col">
+                    <div class="form-group">
+                        <label>Price Range:</label>
+                        <select class="form-control">
+                            <option value="">Select price range</option>
+                            <option value="100-200">$100 - $200</option>
+                            <option value="200-500">$200 - $500</option>
+                            <option value="500-1000">$500 - $1000</option>
+                            <option value="1000+">$1000+</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-col">
+                    <div class="form-group">
+                        <label>&nbsp;</label>
+                        <button type="submit" class="btn-search">Search Now</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Popular Destinations Section -->
+    <section class="section">
+        <div class="section-header">
+            <h2>Popular Destinations</h2>
+            <p>Check out our most popular vacation packages</p>
+        </div>
+        <div class="destinations">
+            <!-- Destination Card 1 -->
+            <div class="destination-card">
+                <div class="destination-img">
+                    <img src="/api/placeholder/350/250" alt="Destination">
+                </div>
+                <div class="destination-info">
+                    <h3>Santorini, Greece</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.</p>
+                    <div class="price">$450 - $950</div>
+                    <div class="info-row">
+                        <span>Average Rating:</span>
+                        <span>4.5/5</span>
+                    </div>
+                    <div class="info-row">
+                        <span>Duration:</span>
+                        <span>5 days</span>
+                    </div>
+                    <div class="info-row">
+                        <span>Best Season:</span>
+                        <span>May to October</span>
+                    </div>
+                    <a href="#" class="btn-book">Book Now</a>
+                </div>
+            </div>
+            <!-- Destination Card 2 -->
+            <div class="destination-card">
+                <div class="destination-img">
+                    <img src="/api/placeholder/350/250" alt="Destination">
+                </div>
+                <div class="destination-info">
+                    <h3>Venice, Italy</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.</p>
+                    <div class="price">$550 - $1050</div>
+                    <div class="info-row">
+                        <span>Average Rating:</span>
+                        <span>4.8/5</span>
+                    </div>
+                    <div class="info-row">
+                        <span>Duration:</span>
+                        <span>7 days</span>
+                    </div>
+                    <div class="info-row">
+                        <span>Best Season:</span>
+                        <span>April to June</span>
+                    </div>
+                    <a href="#" class="btn-book">Book Now</a>
+                </div>
+            </div>
+            <!-- Destination Card 3 -->
+            <div class="destination-card">
+                <div class="destination-img">
+                    <img src="/api/placeholder/350/250" alt="Destination">
+                </div>
+                <div class="destination-info">
+                    <h3>Barcelona, Spain</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.</p>
+                    <div class="price">$400 - $700</div>
+                    <div class="info-row">
+                        <span>Average Rating:</span>
+                        <span>4.7/5</span>
+                    </div>
+                    <div class="info-row">
+                        <span>Duration:</span>
+                        <span>6 days</span>
+                    </div>
+                    <div class="info-row">
+                        <span>Best Season:</span>
+                        <span>May to July</span>
+                    </div>
+                    <a href="#" class="btn-book">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta">
+        <div class="cta-content">
+            <h2>Special Offers & Discounts</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.</p>
+            <a href="#" class="btn">View All Deals</a>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="section">
+        <div class="section-header">
+            <h2>About WOOX Travel</h2>
+            <p>Learn more about our travel agency</p>
+        </div>
+        <div class="about-section">
+            <div class="about-img">
+                <img src="/api/placeholder/600/400" alt="About Us">
+            </div>
+            <div class="about-content">
+                <h2>We Have The Best Travel Deals</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.</p>
+                <p>Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Cras ultricies ligula sed magna dictum porta. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.</p>
+                <a href="#" class="btn">Read More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>About Us</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Destinations</a></li>
+                    <li><a href="#">Deals & Offers</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Info</h3>
+                <ul class="contact-info">
+                    <li><i class="fa fa-map-marker"></i> 123 Travel Street, City, Country</li>
+                    <li><i class="fa fa-phone"></i> +1 234 567 8900</li>
+                    <li><i class="fa fa-envelope"></i> info@wooxtravel.com</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Newsletter</h3>
+                <p>Subscribe to our newsletter to get the latest updates on our best deals and offers.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Your Email">
+                    </div>
+                    <button type="submit" class="btn-search">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 WOOX Travel. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for the WOOX Travel Website
+        
+        // Scroll Effect for Header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.background = 'rgba(22, 34, 57, 1)';
+                header.style.boxShadow = '0px 0px 10px rgba(0, 0, 0, 0.3)';
+            } else {
+                header.style.background = 'rgba(22, 34, 57, 0.95)';
+                header.style.boxShadow = '0px 0px 10px rgba(0, 0, 0, 0.1)';
+            }
+        });
+        
+        // Form Validation
+        document.getElementById('searchForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const formElements = e.target.elements;
+            let isValid = true;
+            
+            // Simple validation
+            for (let i = 0; i < formElements.length; i++) {
+                if (formElements[i].tagName === 'SELECT' || formElements[i].tagName === 'INPUT') {
+                    if (formElements[i].value === '') {
+                        formElements[i].style.borderColor = 'red';
+                        isValid = false;
+                    } else {
+                        formElements[i].style.borderColor = '#e0e0e0';
+                    }
+                }
+            }
+            
+            if (isValid) {
+                alert('Your search has been submitted! We will find the best deals for you.');
+                e.target.reset();
+            } else {
+                alert('Please fill in all fields.');
+            }
+        });
+        
+        // Smooth Scrolling for Navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Dynamic Date Selection Validation
+        const checkInDate = document.querySelector('input[type="date"]:nth-of-type(1)');
+        const checkOutDate = document.querySelector('input[type="date"]:nth-of-type(2)');
+        
+        if (checkInDate && checkOutDate) {
+            // Set minimum date as today
+            const today = new Date();
+            const dd = String(today.getDate()).padStart(2, '0');
+            const mm = String(today.getMonth() + 1).padStart(2, '0');
+            const yyyy = today.getFullYear();
+            const todayFormatted = yyyy + '-' + mm + '-' + dd;
+            
+            checkInDate.min = todayFormatted;
+            
+            // Update checkout min date when checkin changes
+            checkInDate.addEventListener('change', function() {
+                checkOutDate.min = this.value;
+                if (checkOutDate.value && checkOutDate.value < this.value) {
+                    checkOutDate.value = this.value;
+                }
+            });
+        }
+        
+        // Destination Cards Hover Effect
+        const destinationCards = document.querySelectorAll('.destination-card');
+        
+        destinationCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+                this.style.boxShadow = '0px 0px 20px rgba(0, 0, 0, 0.2)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '0px 0px 15px rgba(0, 0, 0, 0.1)';
+            });
+        });
+    </script>
+</body>
+</html>
